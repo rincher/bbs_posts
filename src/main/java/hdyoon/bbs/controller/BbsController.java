@@ -1,0 +1,30 @@
+package hdyoon.bbs.controller;
+
+import hdyoon.bbs.dto.BbsPostDto;
+import hdyoon.bbs.service.BbsService;
+import lombok.RequiredArgsConstructor;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@RequiredArgsConstructor
+public class BbsController {
+
+  private final BbsService bbsService;
+
+  @PostMapping("/append")
+  public String createPost(@RequestBody BbsPostDto postDto) {
+    return bbsService.createPost(postDto);
+  }
+
+  @GetMapping("/validate")
+  public String validatePassword(
+    @RequestParam Long postId,
+    @RequestParam String password
+  ) {
+    return bbsService.validatePassword(postId, password);
+  }
+}
