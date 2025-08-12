@@ -1,7 +1,7 @@
 # Multi-stage build를 사용한 최적화된 Dockerfile
 
 # Stage 1: Build stage
-FROM openjdk:21-jdk-slim as builder
+FROM eclipse-temurin:21-jdk as builder
 
 WORKDIR /app
 
@@ -22,7 +22,7 @@ COPY src src
 RUN ./gradlew build --no-daemon -x test
 
 # Stage 2: Runtime stage
-FROM openjdk:21-jre-slim
+FROM eclipse-temurin:21-jre
 
 # 보안을 위한 non-root 사용자 생성
 RUN groupadd -r spring && useradd -r -g spring spring
