@@ -33,9 +33,12 @@ dependencies {
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 	// https://mvnrepository.com/artifact/org.postgresql/postgresql
 	implementation("org.postgresql:postgresql:42.7.7")
-	implementation 'com.amazonaws:aws-java-sdk-secretsmanager:1.12.565'
+	// https://mvnrepository.com/artifact/software.amazon.awssdk/secretsmanager
+	implementation("software.amazon.awssdk:secretsmanager:2.32.20")
 	implementation 'org.springframework.boot:spring-boot-starter-actuator'
-
+	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+	// https://mvnrepository.com/artifact/org.junit.platform/junit-platform-suite-api
+	testImplementation("org.junit.platform:junit-platform-suite-api:1.13.4")
 }
 
 tasks.named('test') {
