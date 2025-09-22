@@ -91,9 +91,9 @@ public class DataSourceConfig {
     @Profile("prod")
     @Qualifier("writerDataSource")
     public DataSource productionWriterDataSource(
-            @Value("${spring.datasource.writer.url}") String url,
-            @Value("${spring.datasource.writer.username}") String username,
-            @Value("${spring.datasource.writer.password}") String password) {
+            @Value("${DB_WRITER_URL}") String url,
+            @Value("${DB_WRITER_USERNAME}") String username,
+            @Value("${DB_WRITER_PASSWORD}") String password) {
 
         HikariConfig config = new HikariConfig();
         config.setJdbcUrl(url);
@@ -111,9 +111,9 @@ public class DataSourceConfig {
     @Profile("prod")
     @Qualifier("readerDataSource")
     public DataSource productionReaderDataSource(
-            @Value("${spring.datasource.reader.url}") String url,
-            @Value("${spring.datasource.reader.username}") String username,
-            @Value("${spring.datasource.reader.password}") String password) {
+            @Value("${DB_READER_URL}") String url,
+            @Value("${DB_READER_USERNAME}") String username,
+            @Value("${DB_READER_PASSWORD}") String password) {
 
         HikariConfig config = new HikariConfig();
         config.setJdbcUrl(url);
