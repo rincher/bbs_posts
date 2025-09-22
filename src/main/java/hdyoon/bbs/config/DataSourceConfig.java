@@ -88,7 +88,7 @@ public class DataSourceConfig {
     }
 
     @Bean
-    @Profile("production")
+    @Profile("prod")
     @Qualifier("writerDataSource")
     public DataSource productionWriterDataSource(
             @Value("${spring.datasource.writer.url}") String url,
@@ -108,7 +108,7 @@ public class DataSourceConfig {
     }
 
     @Bean
-    @Profile("production")
+    @Profile("prod")
     @Qualifier("readerDataSource")
     public DataSource productionReaderDataSource(
             @Value("${spring.datasource.reader.url}") String url,
