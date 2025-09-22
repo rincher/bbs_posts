@@ -26,15 +26,21 @@ repositories {
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-aop'
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
 	implementation 'org.springframework.boot:spring-boot-starter-tomcat'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    implementation 'io.awspring.cloud:spring-cloud-aws-starter-sqs:3.4.0'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
-	// https://mvnrepository.com/artifact/org.postgresql/postgresql
-	implementation("org.postgresql:postgresql:42.7.7")
-	// https://mvnrepository.com/artifact/software.amazon.awssdk/secretsmanager
-	implementation("software.amazon.awssdk:secretsmanager:2.32.20")
+    // https://mvnrepository.com/artifact/com.mysql/mysql-connector-j
+    implementation 'com.mysql:mysql-connector-j:9.4.0'
+    // https://mvnrepository.com/artifact/software.amazon.awssdk/bom
+    implementation platform ('software.amazon.awssdk:bom:2.33.2')
+	implementation 'software.amazon.awssdk:secretsmanager'
+    implementation 'software.amazon.awssdk:iam'
+	implementation 'software.amazon.awssdk:sqs'
+    implementation 'software.amazon.awssdk:sts'
 	implementation 'org.springframework.boot:spring-boot-starter-actuator'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 	// https://mvnrepository.com/artifact/org.junit.platform/junit-platform-suite-api
