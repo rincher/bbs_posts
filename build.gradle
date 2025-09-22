@@ -35,8 +35,7 @@ dependencies {
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
     // https://mvnrepository.com/artifact/com.mysql/mysql-connector-j
     implementation 'com.mysql:mysql-connector-j:9.4.0'
-    // https://mvnrepository.com/artifact/io.awspring.cloud/spring-cloud-aws-starter-secrets-manager
-    implementation 'io.awspring.cloud:spring-cloud-aws-starter-secrets-manager:3.4.0'
+    implementation 'io.awspring.cloud:spring-cloud-starter-aws-secrets-manager-config:2.4.4'
     // https://mvnrepository.com/artifact/software.amazon.awssdk/bom
     implementation platform ('software.amazon.awssdk:bom:2.33.2')
 	implementation 'software.amazon.awssdk:secretsmanager'
