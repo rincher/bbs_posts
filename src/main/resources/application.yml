@@ -1,4 +1,6 @@
 spring:
+  config:
+    import: "arn:aws:secretsmanager:us-east-1:009215122583:secret:myapp/database-QrLhNP"
   profiles:
     active: prod
 
